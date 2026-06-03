@@ -1,0 +1,12 @@
+agri-ml/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+
+.vscode/
+.DS_Store
+
+mlruns/
+mlflow.db
+models/
