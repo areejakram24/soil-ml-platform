@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import React, { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -23,12 +25,12 @@ const Signup: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   //input handlers
-  const updateField = (e: React.ChangeEvent<HTMLInputElement>) => {
+const updateField = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormFields(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleCreateAccount = async (e: React.FormEvent) => {
+  const handleCreateAccount = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setErrorMessage('');
     setIsSubmitting(true);
@@ -41,16 +43,22 @@ const Signup: React.FC = () => {
       //location: userLocation,
     //};
 
-    try {
+   try {
       const res = await soilAppClient.post('/auth/signup', formFields);
       const { token, user } = res.data;
     
       login(token, user);
       navigate('/dashboard');
-    } 
-    catch (error: any) {
-      const serverMessage = error.response?.data?.error;
-      setErrorMessage(serverMessage || 'Error during signup');
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Look for custom error payload message sent by authController
+        const serverMessage = error.response?.data?.error;
+        setErrorMessage(serverMessage || 'Signup failed. Please try again.');
+      } else {
+        // Fallback for non-network errors (e.g., synchronous JS failures)
+        setErrorMessage('An unexpected error occurred.');
+        console.error('Non-Axios Signup Error:', error);
+      }
     } finally {
       setIsSubmitting(false);
     }
