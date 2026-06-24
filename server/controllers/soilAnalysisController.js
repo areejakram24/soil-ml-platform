@@ -33,9 +33,9 @@ export const createAnalysis = async (req, res) => {
         process.env.FASTAPI_URL || 'http://127.0.0.1:8000/predict',
         {
             //to match the expected input format of the FastAPI model endpoint
-          N: parseFloat(nitrogen),
-          P: parseFloat(phosphorus),
-          K: parseFloat(potassium),
+          nitrogen: parseFloat(nitrogen),
+          phosphorus: parseFloat(phosphorus),
+          potassium: parseFloat(potassium),
           temperature: parseFloat(temperature),
           humidity: parseFloat(humidity),
           ph: parseFloat(ph),
