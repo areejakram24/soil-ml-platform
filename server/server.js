@@ -16,11 +16,10 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'healthy', environment: process.env.NODE_ENV });
 });
 
-// TODO: Register modular router structures once files are created
-// import authRoutes from './routes/authRoutes.js';
-// import soilAnalysisRoutes from './routes/soilAnalysisRoutes.js';
-// app.use('/api/auth', authRoutes);
-// app.use('/api/soil-analysis', soilAnalysisRoutes);
+import authRoutes from './routes/authRoutes.js';
+import soilAnalysisRoutes from './routes/soilAnalysisRoutes.js';
+app.use('/api/auth', authRoutes);
+app.use('/api/soil-analysis', soilAnalysisRoutes);
 
 // gtolobal error handler
 app.use((err, req, res, next) => {
