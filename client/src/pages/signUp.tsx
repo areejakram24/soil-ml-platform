@@ -3,7 +3,7 @@ import { useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import soilAppClient from '../utils/api'; 
-import { useAuth } from '../context/authContext';
+import { useAuth } from '../context/authContext.tsx';
 
 const Signup: React.FC = () => {
   const navigate = useNavigate();
