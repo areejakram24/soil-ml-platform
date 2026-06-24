@@ -1,0 +1,16 @@
+.git
+.dvc
+.env
+.DS_Store
+
+agri-ml
+__pycache__
+*.pyc
+.pytest_cache
+
+client/node_modules
+client/dist
+server/node_modules
+
+mlruns
+mlflow.db
