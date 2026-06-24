@@ -9,7 +9,7 @@ __pycache__/
 
 mlruns/
 mlflow.db
-models/
+/models/
 
 node_modules/
 .npm
