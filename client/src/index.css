@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -204,4 +206,106 @@ code {
 
 .login-redirect-text a:hover {
   text-decoration: underline;
+}
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: left; 
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.user-badge {
+  font-size: 16px;
+  color: var(--text);
+}
+
+.user-badge strong {
+  color: var(--text-h);
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-secondary {
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-h);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--code-bg);
+}
+
+.btn-primary {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Dashboard Card */
+.empty-state-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.empty-state-card h3 {
+  color: var(--text-h);
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+}
+
+.empty-state-card p {
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Card */
+.analysis-form-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 2.5rem;
+  margin-top: 2rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
