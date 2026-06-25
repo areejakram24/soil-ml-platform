@@ -41,6 +41,8 @@ export default function Login() {
     <div className="login-card">
       <h2>Soil Analytics</h2>
       <p>Sign in to your dashboard</p>
+
+      {error && <div style={{ color: '#ef4444', backgroundColor: '#fef2f2', padding: '0.5rem', borderRadius: '6px', marginBottom: '1rem', fontSize: '14px' }}>{error}</div>}
       
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -65,11 +67,13 @@ export default function Login() {
           />
         </div>
         
-        <button className="submit-btn" type="submit">Sign In</button>
+        <button className="submit-btn" type="submit" disabled={loading} >
+          {loading ? 'Signing in...' : 'Sign In'}
+        </button>
       </form>
       
       <p className="login-redirect-text">
-        Don't have an account? <a href="/signup">Create one here</a>
+        Don't have an account? <Link to="/signup">Create one here</Link>
       </p>
     </div>
   </div>
