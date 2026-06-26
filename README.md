@@ -4,7 +4,7 @@ A production-grade, full-stack MERN application integrated with machine learning
 ## Live Demo & Links
 - **Frontend Deployment (Vercel):** https://soil-ml-platform-h1sy-6kzmifafi-just-blue.vercel.app/
 - **Backend Service (Render):** https://soil-ml-platform-1.onrender.com
-- **Source Repository:** https://github.com/areejakram24/soil-ml-platform)
+- **Source Repository:** https://github.com/areejakram24/soil-ml-platform
 
 ---
 
